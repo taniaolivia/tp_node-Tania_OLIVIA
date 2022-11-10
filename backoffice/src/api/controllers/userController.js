@@ -78,7 +78,6 @@ exports.userLogin = (req, res) => {
                                             res.json({message: "Impossible de générer le token"})
                                         }
                                         else{
-                                            console.log(req.session.userId)
                                             res.status(200);
                                             res.json({message: `Utilisateur connecté : ${user.email}`, token, user: userData});
                                         }
