@@ -60,6 +60,6 @@
 ```
 
 ### Récupération de tous les posts : POSTMAN
-- Lien : ```localhost:3000/posts
+- Lien : ```localhost:3000/posts```
 - Méthode : GET
 - Ajoutez un header "Authorization" avec le token de login
