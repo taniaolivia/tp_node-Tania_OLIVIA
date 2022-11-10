@@ -15,4 +15,6 @@
   - Lien : <http://localhost:8080/>
   
  ### IMPORTANT
- - Voir les fichiers "readme" dans les répertoires backoffice (<https://github.com/taniaolivia/tp_node-Tania_OLIVIA/tree/main/backoffice#readme>)et frontoffice (<https://github.com/taniaolivia/tp_node-Tania_OLIVIA/tree/main/frontoffice#readme>)pour plus de détails
+ - Voir les fichiers "readme" dans les répertoires backoffice et frontoffice pour plus de détails
+  - Backoffice : <https://github.com/taniaolivia/tp_node-Tania_OLIVIA/tree/main/backoffice#readme>
+  - Frontoffice : <https://github.com/taniaolivia/tp_node-Tania_OLIVIA/tree/main/frontoffice#readme>
