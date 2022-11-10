@@ -8,7 +8,7 @@
 
 ### Lancement de projet "back" et "front"
 - Dans le répertoire "backoffice" :
-  - Lancez le docker avec ```docker-compose up````
+  - Lancez le docker avec ```docker-compose up```
 - Dans le répertoire "frontoffice" :
   - Installez tous les paquets dans le fichier "package.json" avec ```npm i```
   - Lancez le serveur client avec ```npm run serve```
