@@ -1,0 +1,61 @@
+version: '3.3'
+services:
+  node:
+    container_name: node
+    image: 'node:latest'
+    working_dir: /home/node/app
+    env_file:
+      - .env
+    command:
+      - /bin/sh
+      - '-c'
+      - 'npm install && npm run watch'
+    ports:
+      - '3000:3000'
+    volumes:
+      - './src:/home/node/app'
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    networks:
+      - backoffice
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_INITDB_DATABASE: mongodb
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongopass
+    restart: always
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-volume:/data/db
+    working_dir: /data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - backoffice
+
+  mongo-express:
+    image: mongo-express:latest
+    restart: always
+    container_name: mongo_express
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_AUTH_DATABASE: mongodb
+      ME_CONFIG_MONGODB_AUTH_USERNAME: mongo
+      ME_CONFIG_MONGODB_AUTH_PASSWORD: mongopass
+      ME_CONFIG_BASICAUTH_USERNAME: mongo
+      ME_CONFIG_BASICAUTH_PASSWORD: mongopass
+    ports:
+      - '8081:8081'
+    depends_on:
+      - mongo
+    networks:
+      - backoffice
+
+networks:
+  backoffice:
+    driver: bridge
