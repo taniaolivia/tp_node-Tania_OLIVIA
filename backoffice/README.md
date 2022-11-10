@@ -10,7 +10,7 @@
 - Lien : <http://localhost:8081/db/mongodb/>
 
 ### Création d'un compte admin : POSTMAN
-- Lien : <localhost:3000/user/register>
+- Lien : ```localhost:3000/user/register```
 - Méthode : POST
 - Exemple de rêquete :
 ```
@@ -22,7 +22,7 @@
 ```
 
 ### Création d'un compte user : POSTMAN
-- Lien : <localhost:3000/user/register>
+- Lien : ```localhost:3000/user/register```
 - Méthode : POST
 - Exemple de rêquete :
 ```
@@ -33,7 +33,7 @@
 ```
 
 ### Connexion d'un compte : POSTMAN
-- Lien : <localhost:3000/user/login>
+- Lien : ```localhost:3000/user/login```
 - Méthode : POST
 - Exemple de rêquete :
 ```
@@ -44,11 +44,11 @@
 ```
 
 ### Déconnexion d'un compte : POSTMAN
-- Lien : <localhost:3000/user/logout/:userId>
+- Lien : ```localhost:3000/user/logout/:userId```
 - Méthode : POST
 
 ### Création du post : POSTMAN
-- Lien : <localhost:3000/posts>
+- Lien : ```localhost:3000/posts```
 - Méthode : POST
 - Ajoutez un header "Authorization" avec le token de login
 - Exemple de rêquete :
@@ -60,6 +60,6 @@
 ```
 
 ### Récupération de tous les posts : POSTMAN
-- Lien : <localhost:3000/posts>
+- Lien : ```localhost:3000/posts
 - Méthode : GET
 - Ajoutez un header "Authorization" avec le token de login
