@@ -1,13 +1,9 @@
 module.exports = (server) => {
     const postController = require("../controllers/postController");
     const jwtMiddleware = require("../middlewares/jwtMiddleware");
+    const cors = require('cors');
 
 server.route("/posts")
-.get(jwtMiddleware.authenticateUser, postController.listAllPosts)
-.post(jwtMiddleware.authenticateAdmin, postController.createAPost);
-
-/*server.route("/posts/:post_id")
-.get(postController.getAPost)
-.put(postController.updateAPost)
-.delete(postController.deleteApost);*/
+.get(jwtMiddleware.authenticateUser, cors(), postController.listAllPosts)
+.post(jwtMiddleware.authenticateAdmin,cors(),  postController.createAPost);
 }

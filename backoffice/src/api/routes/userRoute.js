@@ -1,7 +1,8 @@
 module.exports = (server) => {
     const userController = require("../controllers/userController");
+    const cors = require('cors');
 
-server.post("/user/register", userController.userRegister);
-server.post("/user/login", userController.userLogin);
-server.post("/user/logout", userController.userLogout);
+server.post("/user/register", cors(), userController.userRegister);
+server.post("/user/login", cors(), userController.userLogin);
+server.post("/user/logout/:userId", cors(), userController.userLogout);
 }

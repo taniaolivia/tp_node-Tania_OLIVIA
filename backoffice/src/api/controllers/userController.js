@@ -54,8 +54,7 @@ exports.userLogin = (req, res) => {
                         res.json({message: "Mot de passe incorrect"})
                     }
                     else{
-                        if(!user.connected && !req.session.userId){
-                           req.session.userId = user._id.toString();
+                        if(!user.connected){
                            user.connected = 1;
 
                            user.save((error, user) => {
@@ -79,8 +78,9 @@ exports.userLogin = (req, res) => {
                                             res.json({message: "Impossible de générer le token"})
                                         }
                                         else{
+                                            console.log(req.session.userId)
                                             res.status(200);
-                                            res.json({message: `Utilisateur connecté : ${user.email}`, token});
+                                            res.json({message: `Utilisateur connecté : ${user.email}`, token, user: userData});
                                         }
                                     });
                                 }
@@ -105,8 +105,8 @@ exports.userLogin = (req, res) => {
 
 // Déconnexion d'utilisateur
 exports.userLogout = (req, res, error) => {
-    if(req.session.userId){
-        User.findById(req.session.userId, (error, user) => {
+    if(req.params.userId){
+        User.findById(req.params.userId, (error, user) => {
             if(error){
                 res.status(401);
                 console.log(error);
@@ -114,7 +114,6 @@ exports.userLogout = (req, res, error) => {
             }
             else{
                 if(user.connected){
-                    delete req.session.userId;
                     user.connected = 0;
 
                     user.save((error, user) => {

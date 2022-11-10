@@ -1,5 +1,5 @@
 const express = require('express');
-const session = require("express-session");
+const cors = require('cors');
 
 const hostname = "0.0.0.0";
 const port = 3000;
@@ -21,13 +21,8 @@ mongoose.connect("mongodb://mongo/mongodb", {
 
 server.use(express.urlencoded());
 server.use(express.json());
-server.use(session({
-    name: 'SESSION_ID',      
-    secret: 'secret', 
-    cookie: {
-        maxAge: 30 * 86400000, 
-    }
-}));
+
+server.use(cors());
 
 const postRoute = require("./api/routes/postRoute");
 postRoute(server);
