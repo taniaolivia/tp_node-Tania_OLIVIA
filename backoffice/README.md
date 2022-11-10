@@ -7,7 +7,7 @@
 ### Connexion à la base de données
 - Username : mongo
 - Password : mongopass
-- Lien : <http://localhost:8081/db/mongodb/>
+- Lien : <http://localhost:8081/>
 
 ### Création d'un compte admin : POSTMAN
 - Lien : ```localhost:3000/user/register```
