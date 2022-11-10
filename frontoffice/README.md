@@ -1,4 +1,4 @@
-# frontoffice
+# Côté "Front"
 
 ### Lancement de projet partie "front"
 ```
