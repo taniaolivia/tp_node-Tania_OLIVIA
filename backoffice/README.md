@@ -46,6 +46,10 @@
 ### Déconnexion d'un compte : POSTMAN
 - Lien : ```localhost:3000/user/logout/:userId```
 - Méthode : POST
+- Exemple de rêquete :
+```
+localhost:3000/user/logout/648ad622e9a6666d0afac3f2
+```
 
 ### Création du post : POSTMAN
 - Lien : ```localhost:3000/posts```
@@ -63,3 +67,12 @@
 - Lien : ```localhost:3000/posts```
 - Méthode : GET
 - Ajoutez un header "Authorization" avec le token de login
+
+### Récupération d'un post par id : POSTMAN
+- Lien : ```localhost:3000/posts/:post_id```
+- Méthode : GET
+- Ajoutez un header "Authorization" avec le token de login
+- Exemple de rêquete :
+```
+localhost:3000/posts//648ad622e9a6666d0afac3f2
+```
