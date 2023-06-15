@@ -8,10 +8,10 @@ const server = express();
 
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://mongo/mongodb", {
+mongoose.connect(`mongodb://${process.env.MONGODB_SERVER}/${process.env.MONGODB_AUTH_DATABASE}`, {
     useNewUrlParser: true,
-    user: "mongo",
-    pass: "mongopass"
+    user: process.env.MONGODB_AUTH_USERNAME,
+    pass: process.env.MONGODB_AUTH_PASSWORD
 }).then(() => {
     console.log('Connexion à la base de données avec succès');
 }).catch(err => {
