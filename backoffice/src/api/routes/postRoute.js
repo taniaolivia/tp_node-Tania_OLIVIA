@@ -6,4 +6,7 @@ module.exports = (server) => {
 server.route("/posts")
 .get(jwtMiddleware.authenticateUser, cors(), postController.listAllPosts)
 .post(jwtMiddleware.authenticateAdmin,cors(),  postController.createAPost);
+
+server.route("/posts/:post_id")
+.get(jwtMiddleware.authenticateUser, cors(), postController.getAPost);
 }
