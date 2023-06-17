@@ -5,6 +5,13 @@
 npm i
 npm run serve
 ```
+
+### PWA
+```
+npm run build
+```
+Afin que le PWA pourrait fonctionner, il faut que vous faites un build pour la production
+
 ### Lien de projet
 
 <http://localhost:8080/>
