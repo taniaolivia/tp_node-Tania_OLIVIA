@@ -8,6 +8,7 @@ import { BootstrapVue, IconsPlugin, LayoutPlugin, DropdownPlugin, TablePlugin, N
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+//import './registerServiceWorker'
 
 Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)

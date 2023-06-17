@@ -58,7 +58,7 @@ export default {
     else{
       this.connected = false
     }
-  }
+  },
 }
 </script>
 
