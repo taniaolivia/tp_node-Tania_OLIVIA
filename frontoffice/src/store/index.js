@@ -10,7 +10,11 @@ const vuexLocal = new VuexPersistence({
 export default new Vuex.Store({
     plugins: [vuexLocal.plugin],
     state: {
-        token: ""
+        token: "",
+        user: "",
+        posts: [],
+        post: "",
+        visitedPages: []
     },
     mutations: {
         setToken(state, token) {
@@ -18,7 +22,16 @@ export default new Vuex.Store({
         },
         setUser(state, user) {
             state.user = user
-        }
+        },
+        setPosts(state, posts) {
+            state.posts = posts
+        },
+        setChosenPost(state, post) {
+            state.post = post
+        },
+        setVisitedPages(state, visitedPages) {
+            state.visitedPages = visitedPages
+        },
     },
     actions: {},
     modules: {}

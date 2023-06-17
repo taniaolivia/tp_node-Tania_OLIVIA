@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <HeaderAdmin v-if="admin"/>
-    <HeaderUser v-if="!admin"/>
+    <HeaderUser v-else/>
 
     <div id="welcome">
       <h1>Welcome {{user}} !</h1>
@@ -20,20 +20,21 @@ export default {
       }
   },
   created(){
-    if(this.$store.state.user.admin){
+
+    if(this.$store.state.user && this.$store.state.user.admin !== undefined){
         this.admin = true
     }
     else{
       this.admin = false
     }
 
-    if(this.$store.state.user.email){
+    if(this.$store.state.user && this.$store.state.user.email !== undefined){
       this.user = this.$store.state.user.email
     }
     else{
       this.user = ""
     }
-  }
+  },
 }
 </script>
 
